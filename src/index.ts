@@ -1,7 +1,7 @@
-import { initTelegram } from "./platforms/telegram";
-import { initDiscord } from "./platforms/discord"
-import { initFalatron } from "./services/falatron"
+import 'dotenv/config';
+import { startTelegramBot } from './platforms/telegram';
 
-initFalatron();
-initTelegram();
-initDiscord();
+// Inicia o bot do Telegram
+startTelegramBot();
+
+// Aqui você pode adicionar o código para outras plataformas no futuro
