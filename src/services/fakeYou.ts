@@ -1,8 +1,8 @@
 import * as Fs from 'fs'
 import * as Path from 'path'
-import * as uuid4 from "uuid4"
+import { v4 as uuidv4 } from 'uuid';
 import Axios from 'axios'
-import * as md5 from 'md5';
+import md5 from 'md5';
 
 export const downloadAudio = (bucketPath: string, hash: string) => {
   return new Promise(async (resolve, reject) => {
@@ -37,7 +37,7 @@ export const status = async (inferenceJobToken: string) => {
 
 export const inference = async (text: string) => {
   var payload = JSON.stringify({
-    uuid_idempotency_token: uuid4(),
+    uuid_idempotency_token: uuidv4(),
     tts_model_token: "TM:9rhan0r24wm3",
     inference_text: text + "."
   });
